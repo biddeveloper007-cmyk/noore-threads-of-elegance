@@ -12,13 +12,13 @@ export function Logo({
     <Link
       to="/"
       aria-label="NOORÉ home"
-      className={cn("group inline-flex flex-col items-center", className)}
+      className={cn("group inline-flex flex-col items-center text-center", className)}
     >
       <svg
         viewBox="0 0 48 18"
         aria-hidden="true"
         className={cn(
-          "h-3.5 w-10 transition-opacity",
+          "h-2.5 w-8 sm:h-3.5 sm:w-10 transition-opacity",
           tone === "light" ? "text-accent" : "text-accent",
         )}
       >
@@ -30,7 +30,7 @@ export function Logo({
       </svg>
       <span
         className={cn(
-          "font-serif text-2xl leading-none tracking-[0.18em] sm:text-[1.75rem]",
+          "font-serif text-lg sm:text-2xl leading-tight tracking-[0.18em] lg:text-[1.75rem]",
           tone === "light" ? "text-primary-foreground" : "text-primary",
         )}
       >
@@ -38,7 +38,7 @@ export function Logo({
       </span>
       <span
         className={cn(
-          "mt-1 text-[0.5rem] tracking-[0.28em] uppercase",
+          "text-[0.42rem] sm:text-[0.5rem] tracking-[0.24em] sm:tracking-[0.28em] uppercase",
           tone === "light" ? "text-primary-foreground/70" : "text-muted-foreground",
         )}
       >

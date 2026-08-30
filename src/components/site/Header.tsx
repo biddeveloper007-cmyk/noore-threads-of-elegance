@@ -82,58 +82,69 @@ export function Header() {
       >
         <div
           className={cn(
-            "mx-auto grid max-w-[1440px] grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-4 px-4 transition-all duration-300 sm:px-8",
-            scrolled ? "py-2" : "py-3.5",
+            "mx-auto grid max-w-[1440px] items-center transition-all duration-300 px-3 sm:px-8",
+            "grid-cols-[40px_1fr_auto] lg:grid-cols-[auto_minmax(0,1fr)_auto] gap-2 sm:gap-4",
+            scrolled ? "py-1.5 lg:py-2" : "py-2 lg:py-3.5",
           )}
         >
-          <div className="flex items-center gap-2">
+          {/* Left Column: Hamburger menu on mobile, Logo on desktop */}
+          <div className="flex items-center justify-start">
             <button
               type="button"
               onClick={() => setMenuOpen(true)}
               aria-label="Open menu"
-              className="-ml-1 grid h-9 w-9 place-items-center lg:hidden"
+              className="-ml-1 grid h-8 w-8 place-items-center lg:hidden text-foreground"
             >
               <Menu size={20} />
             </button>
-            <Logo />
+            <div className="hidden lg:block">
+              <Logo />
+            </div>
           </div>
 
-          <nav className="hidden items-center justify-center gap-7 lg:flex">
-            {NAV.map((item) => (
-              <div key={item.label} className="group relative">
-                <Link
-                  to="/shop"
-                  search={{ category: item.category ?? "all" }}
-                  className="flex items-center gap-1 py-3 text-[0.7rem] tracking-[0.16em] whitespace-nowrap uppercase transition-colors hover:text-primary"
-                  activeProps={{ className: "text-primary" }}
-                >
-                  {item.label}
-                  {item.children && <ChevronDown size={12} />}
-                </Link>
-                {item.children && (
-                  <div className="invisible absolute top-full left-1/2 w-52 -translate-x-1/2 translate-y-1 border border-border bg-card py-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
-                    {item.children.map((child) => (
-                      <Link
-                        key={child.label}
-                        to="/shop"
-                        search={{ category: child.category }}
-                        className="block px-4 py-2 text-xs tracking-wide transition-colors hover:bg-secondary hover:text-primary"
-                      >
-                        {child.label}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-            ))}
-          </nav>
+          {/* Center Column: Centered Logo on mobile, Nav Links on desktop */}
+          <div className="flex items-center justify-center text-center">
+            <div className="lg:hidden">
+              <Logo />
+            </div>
+            <nav className="hidden items-center justify-center gap-7 lg:flex">
+              {NAV.map((item) => (
+                <div key={item.label} className="group relative">
+                  <Link
+                    to="/shop"
+                    search={{ category: item.category ?? "all" }}
+                    className="flex items-center gap-1 py-3 text-[0.7rem] tracking-[0.16em] whitespace-nowrap uppercase transition-colors hover:text-primary"
+                    activeProps={{ className: "text-primary" }}
+                  >
+                    {item.label}
+                    {item.children && <ChevronDown size={12} />}
+                  </Link>
+                  {item.children && (
+                    <div className="invisible absolute top-full left-1/2 w-52 -translate-x-1/2 translate-y-1 border border-border bg-card py-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                      {item.children.map((child) => (
+                        <Link
+                          key={child.label}
+                          to="/shop"
+                          search={{ category: child.category }}
+                          className="block px-4 py-2 text-xs tracking-wide transition-colors hover:bg-secondary hover:text-primary"
+                        >
+                          {child.label}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ))}
+            </nav>
+          </div>
 
-          <div className="flex items-center gap-1 sm:gap-3">
+          {/* Right Column: Search + Account + Wishlist + Cart icons */}
+          <div className="flex items-center justify-end gap-1 sm:gap-3">
             <Link
               to="/shop"
               search={{ category: "all" }}
               aria-label="Search products"
-              className="grid h-9 w-9 place-items-center transition-colors hover:text-primary"
+              className="grid h-8 w-8 place-items-center transition-colors hover:text-primary sm:h-9 sm:w-9"
             >
               <Search size={18} />
             </Link>
@@ -151,7 +162,7 @@ export function Header() {
             >
               <Heart size={18} />
               {wishlist.length > 0 && (
-                <span className="absolute top-0.5 right-0 grid h-4 min-w-4 place-items-center rounded-full bg-accent px-1 text-[0.6rem] text-accent-foreground">
+                <span className="absolute top-0.5 right-0 grid h-4 min-w-4 place-items-center rounded-full bg-accent px-1 text-[0.6rem] text-accent-foreground font-semibold">
                   {wishlist.length}
                 </span>
               )}
@@ -160,10 +171,10 @@ export function Header() {
               type="button"
               onClick={openCart}
               aria-label={`Shopping bag, ${count} items`}
-              className="relative grid h-9 w-9 place-items-center transition-colors hover:text-primary"
+              className="relative grid h-8 w-8 place-items-center transition-colors hover:text-primary sm:h-9 sm:w-9"
             >
               <ShoppingBag size={18} />
-              <span className="absolute top-0.5 right-0 grid h-4 min-w-4 place-items-center rounded-full bg-primary px-1 text-[0.6rem] text-primary-foreground">
+              <span className="absolute top-0 right-0 grid h-4 min-w-4 place-items-center rounded-full bg-primary px-1 text-[0.55rem] text-primary-foreground font-bold">
                 {count}
               </span>
             </button>

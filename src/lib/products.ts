@@ -1,4 +1,7 @@
 import hero from "@/assets/hero.jpg";
+import heroBanner2 from "@/assets/hero-banner-2.jpg";
+import heroBanner3 from "@/assets/hero-banner-3.jpg";
+import heroBanner4 from "@/assets/hero-banner-4.jpg";
 import catUnstitched from "@/assets/cat-unstitched.jpg";
 import catReadyToWear from "@/assets/cat-readytowear.jpg";
 import catFancy from "@/assets/cat-fancy.jpg";
@@ -17,6 +20,9 @@ import bannerModel from "@/assets/banner-model.jpg";
 
 export const images = {
   hero,
+  heroBanner2,
+  heroBanner3,
+  heroBanner4,
   catUnstitched,
   catReadyToWear,
   catFancy,

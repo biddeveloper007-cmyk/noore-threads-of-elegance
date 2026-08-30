@@ -4,12 +4,14 @@ import { cn } from "@/lib/utils";
 export function SectionHeading({
   title,
   subtitle,
+  eyebrow,
   align = "center",
   action,
   className,
 }: {
   title: string;
   subtitle?: string;
+  eyebrow?: string;
   align?: "center" | "left";
   action?: ReactNode;
   className?: string;
@@ -25,6 +27,7 @@ export function SectionHeading({
       )}
     >
       <div className={cn("min-w-0", align === "center" && "flex flex-col items-center")}>
+        {eyebrow && <span className="label-eyebrow text-accent mb-1">{eyebrow}</span>}
         <h2 className="font-serif text-3xl tracking-[0.12em] uppercase sm:text-[2.35rem]">
           {title}
         </h2>
@@ -46,3 +49,4 @@ export function SectionHeading({
     </div>
   );
 }
+
