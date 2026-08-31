@@ -33,28 +33,32 @@ const HERO_SLIDES = [
     tag: "SUMMER COLLECTION 2026",
     title: "ELEGANCE THAT SPEAKS",
     desc: "Discover timeless designs crafted for the modern Pakistani woman.",
-    image: images.hero,
+    imageMobile: images.heroMobile1,
+    imageDesktop: images.heroDesktop1,
     category: "ready-to-wear",
   },
   {
     tag: "FESTIVE EMBROIDERED EDIT",
     title: "GRACE IN EVERY EMBROIDERY",
     desc: "Intricate zari work and hand-finished organza for your special moments.",
-    image: images.heroBanner2,
+    imageMobile: images.heroMobile2,
+    imageDesktop: images.heroDesktop2,
     category: "fancy",
   },
   {
     tag: "LUXURY PRET COLLECTION",
     title: "SILK SILHOUETTES & DRAPES",
     desc: "Fluid textures and understated cuts designed for effortless evening wear.",
-    image: images.heroBanner3,
+    imageMobile: images.heroMobile3,
+    imageDesktop: images.heroDesktop3,
     category: "pret",
   },
   {
     tag: "UNSTITCHED LAWN 2026",
     title: "PURE ARTISTRY & HERITAGE",
     desc: "Three-piece luxury lawn ensembles with embroidered scalloped dupattas.",
-    image: images.heroBanner4,
+    imageMobile: images.heroMobile4,
+    imageDesktop: images.heroDesktop4,
     category: "unstitched",
   },
 ];
@@ -102,34 +106,37 @@ function Index() {
                 : "opacity-0 z-0 pointer-events-none"
             }`}
           >
-            <img
-              src={slide.image}
-              alt={slide.title}
-              className={`h-full w-full object-cover object-[center_top] transition-transform duration-[6000ms] ease-out ${
-                currentSlide === index ? "scale-105" : "scale-100"
-              }`}
-            />
+            <picture>
+              <source media="(min-width: 640px)" srcSet={slide.imageDesktop} />
+              <img
+                src={slide.imageMobile}
+                alt={slide.title}
+                className={`h-full w-full object-cover object-[center_top] sm:object-[right_top] transition-transform duration-[6000ms] ease-out ${
+                  currentSlide === index ? "scale-105" : "scale-100"
+                }`}
+              />
+            </picture>
 
             {/* Desktop Gradient Overlay (Left to Right) */}
             <div className="hidden sm:block absolute inset-0 bg-gradient-to-r from-[var(--cream)]/90 via-[var(--cream)]/60 to-transparent sm:w-3/4 lg:w-3/5" />
 
-            {/* Mobile Gradient Overlay (Ultra-subtle bottom vignette ONLY for button contrast - image is 100% clear!) */}
-            <div className="sm:hidden absolute inset-0 bg-gradient-to-t from-[var(--cream)]/75 via-transparent via-40% to-transparent" />
+            {/* Mobile: bottom scrim keeps model/dress visible above while text stays readable */}
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-[58%] bg-gradient-to-t from-[var(--cream)] from-0% via-[var(--cream)]/92 via-35% to-transparent to-72% sm:hidden" />
           </div>
         ))}
 
-        {/* Hero Content Container - ZERO WHITE BG BOX */}
+        {/* Hero Content Container */}
         <div className="relative z-20 mx-auto flex h-full max-w-[1440px] flex-col justify-end sm:justify-center px-4 pb-20 sm:px-12 sm:pb-0 lg:px-16">
-          <div className="max-w-xl space-y-3 sm:space-y-4 p-0">
-            <span className="label-eyebrow inline-block text-accent tracking-[0.25em] uppercase font-semibold drop-shadow-xs">
+          <div className="hero-slide-copy max-w-xl space-y-3 sm:space-y-4 rounded-sm border border-[var(--cream)]/40 bg-[var(--cream)]/78 px-4 py-4 shadow-[0_8px_32px_rgba(23,35,31,0.08)] backdrop-blur-[6px] sm:border-0 sm:bg-transparent sm:p-0 sm:shadow-none sm:backdrop-blur-none">
+            <span className="label-eyebrow inline-block font-semibold uppercase tracking-[0.25em] text-primary">
               {activeSlide.tag}
             </span>
 
-            <h1 className="font-serif text-2xl tracking-tight text-foreground sm:text-5xl lg:text-6xl uppercase leading-tight drop-shadow-xs">
+            <h1 className="font-serif text-2xl uppercase leading-tight tracking-tight text-foreground sm:text-5xl lg:text-6xl">
               {activeSlide.title}
             </h1>
 
-            <p className="text-xs sm:text-base leading-relaxed text-foreground/90 font-medium sm:text-muted-foreground max-w-md drop-shadow-xs">
+            <p className="max-w-md text-xs font-medium leading-relaxed text-foreground/90 sm:text-base sm:text-muted-foreground">
               {activeSlide.desc}
             </p>
 
@@ -152,7 +159,7 @@ function Index() {
           </div>
 
           {/* Carousel Progress Indicators & Slide Controls */}
-          <div className="absolute bottom-4 sm:bottom-8 inset-x-4 sm:inset-x-12 lg:inset-x-16 flex items-center justify-between pt-3 sm:pt-4 border-t border-foreground/10">
+          <div className="absolute inset-x-4 bottom-4 flex items-center justify-between border-t border-foreground/15 bg-[var(--cream)]/70 px-3 pt-3 backdrop-blur-[4px] sm:inset-x-12 sm:bottom-8 sm:bg-transparent sm:px-0 sm:pt-4 sm:backdrop-blur-none lg:inset-x-16">
             <div className="flex items-center gap-2 sm:gap-3">
               <span className="text-[0.7rem] sm:text-xs font-serif text-primary font-semibold">
                 0{currentSlide + 1}

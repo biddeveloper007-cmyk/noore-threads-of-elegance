@@ -1,42 +1,63 @@
-import hero from "@/assets/hero.jpg";
-import heroBanner2 from "@/assets/hero-banner-2.jpg";
-import heroBanner3 from "@/assets/hero-banner-3.jpg";
-import heroBanner4 from "@/assets/hero-banner-4.jpg";
-import catUnstitched from "@/assets/cat-unstitched.jpg";
-import catReadyToWear from "@/assets/cat-readytowear.jpg";
-import catFancy from "@/assets/cat-fancy.jpg";
-import catPret from "@/assets/cat-pret.jpg";
-import catAccessories from "@/assets/cat-accessories.jpg";
-import p1 from "@/assets/p1.jpg";
-import p2 from "@/assets/p2.jpg";
-import p3 from "@/assets/p3.jpg";
-import p4 from "@/assets/p4.jpg";
-import p5 from "@/assets/p5.jpg";
-import edit1 from "@/assets/edit1.jpg";
-import edit2 from "@/assets/edit2.jpg";
-import edit3 from "@/assets/edit3.jpg";
-import story from "@/assets/story.jpg";
-import bannerModel from "@/assets/banner-model.jpg";
+import heroMobile1 from "@/assets/hero-mobile-1.png";
+import heroMobile2 from "@/assets/hero-mobile-2.png";
+import heroMobile3 from "@/assets/hero-mobile-3.png";
+import heroMobile4 from "@/assets/hero-mobile-4.png";
+import heroDesktop1 from "@/assets/hero-desktop-1.png";
+import heroDesktop2 from "@/assets/hero-desktop-2.png";
+import heroDesktop3 from "@/assets/hero-desktop-3.png";
+import heroDesktop4 from "@/assets/hero-desktop-4.png";
+import catUnstitched from "@/assets/cat-unstitched.png";
+import catReadyToWear from "@/assets/cat-readytowear.png";
+import catFancy from "@/assets/cat-fancy.png";
+import catPret from "@/assets/cat-pret.png";
+import catAccessories from "@/assets/cat-accessories.png";
+import productEmbroideredLawn from "@/assets/product-embroidered-lawn.png";
+import productPrintedLawn from "@/assets/product-printed-lawn.png";
+import productDigitalPrinted from "@/assets/product-digital-printed.png";
+import productChiffonSuit from "@/assets/product-chiffon-suit.png";
+import productLuxuryPret from "@/assets/product-luxury-pret.png";
+import productFestiveVelvet from "@/assets/product-festive-velvet.png";
+import productEmeraldSilk from "@/assets/product-emerald-silk.png";
+import productEverydayCotton from "@/assets/product-everyday-cotton.png";
+import productGoldClutch from "@/assets/product-gold-clutch.png";
+import productMarigoldKurta from "@/assets/product-marigold-kurta.png";
+import productBlushPret from "@/assets/product-blush-pret.png";
+import editEveryday from "@/assets/edit-everyday.png";
+import editFestive from "@/assets/edit-festive.png";
+import editLuxuryPret from "@/assets/edit-luxury-pret.png";
+import storyCraft from "@/assets/story-craft.png";
+import bannerModel from "@/assets/banner-model.png";
 
 export const images = {
-  hero,
-  heroBanner2,
-  heroBanner3,
-  heroBanner4,
+  heroMobile1,
+  heroMobile2,
+  heroMobile3,
+  heroMobile4,
+  heroDesktop1,
+  heroDesktop2,
+  heroDesktop3,
+  heroDesktop4,
   catUnstitched,
   catReadyToWear,
   catFancy,
   catPret,
   catAccessories,
-  p1,
-  p2,
-  p3,
-  p4,
-  p5,
-  edit1,
-  edit2,
-  edit3,
-  story,
+  productEmbroideredLawn,
+  productPrintedLawn,
+  productDigitalPrinted,
+  productChiffonSuit,
+  productLuxuryPret,
+  productFestiveVelvet,
+  productEmeraldSilk,
+  productEverydayCotton,
+  productGoldClutch,
+  productMarigoldKurta,
+  productBlushPret,
+  editEveryday,
+  editFestive,
+  editLuxuryPret,
+  storyCraft,
+  story: storyCraft,
   bannerModel,
 };
 
@@ -79,8 +100,8 @@ export const products: Product[] = [
       { name: "Emerald", hex: "#064E3B" },
     ],
     sizes,
-    image: p1,
-    gallery: [p1, catUnstitched, p3, p2],
+    image: productEmbroideredLawn,
+    gallery: [productEmbroideredLawn, catUnstitched, productDigitalPrinted, productPrintedLawn],
     badge: "NEW",
     isNew: true,
     inStock: true,
@@ -103,8 +124,8 @@ export const products: Product[] = [
       { name: "Ivory", hex: "#FFFDF8" },
     ],
     sizes,
-    image: p2,
-    gallery: [p2, catPret, p1],
+    image: productPrintedLawn,
+    gallery: [productPrintedLawn, catReadyToWear, productEmbroideredLawn],
     badge: "NEW",
     isNew: true,
     inStock: true,
@@ -126,8 +147,8 @@ export const products: Product[] = [
       { name: "Sage", hex: "#A9BFA0" },
     ],
     sizes,
-    image: p3,
-    gallery: [p3, catReadyToWear, p1],
+    image: productDigitalPrinted,
+    gallery: [productDigitalPrinted, catReadyToWear, productEmbroideredLawn],
     badge: "NEW",
     isNew: true,
     inStock: true,
@@ -149,8 +170,8 @@ export const products: Product[] = [
       { name: "Emerald", hex: "#064E3B" },
     ],
     sizes,
-    image: p4,
-    gallery: [p4, catFancy, edit3],
+    image: productChiffonSuit,
+    gallery: [productChiffonSuit, catFancy, productFestiveVelvet],
     badge: "NEW",
     isNew: true,
     inStock: true,
@@ -172,8 +193,8 @@ export const products: Product[] = [
       { name: "Gold", hex: "#C9A96E" },
     ],
     sizes,
-    image: p5,
-    gallery: [p5, edit2, catAccessories],
+    image: productLuxuryPret,
+    gallery: [productLuxuryPret, editLuxuryPret, catPret],
     badge: "NEW",
     isNew: true,
     inStock: true,
@@ -196,8 +217,8 @@ export const products: Product[] = [
       { name: "Gold", hex: "#C9A96E" },
     ],
     sizes,
-    image: edit2,
-    gallery: [edit2, p5, catFancy],
+    image: productFestiveVelvet,
+    gallery: [productFestiveVelvet, productLuxuryPret, catFancy],
     badge: "SALE",
     inStock: true,
     bestSeller: true,
@@ -218,8 +239,8 @@ export const products: Product[] = [
       { name: "Sage", hex: "#A9BFA0" },
     ],
     sizes,
-    image: edit3,
-    gallery: [edit3, p4, catFancy],
+    image: productEmeraldSilk,
+    gallery: [productEmeraldSilk, productChiffonSuit, catPret],
     inStock: true,
     bestSeller: true,
     description:
@@ -239,8 +260,8 @@ export const products: Product[] = [
       { name: "Sage", hex: "#A9BFA0" },
     ],
     sizes,
-    image: edit1,
-    gallery: [edit1, p2, catReadyToWear],
+    image: productEverydayCotton,
+    gallery: [productEverydayCotton, productPrintedLawn, catReadyToWear],
     inStock: true,
     bestSeller: true,
     description:
@@ -258,8 +279,8 @@ export const products: Product[] = [
     fabric: "Embroidered Satin",
     colors: [{ name: "Emerald", hex: "#064E3B" }],
     sizes: ["One Size"],
-    image: catAccessories,
-    gallery: [catAccessories, p5],
+    image: productGoldClutch,
+    gallery: [productGoldClutch, catAccessories, productLuxuryPret],
     badge: "SALE",
     inStock: true,
     description:
@@ -279,8 +300,8 @@ export const products: Product[] = [
       { name: "Ivory", hex: "#FFFDF8" },
     ],
     sizes,
-    image: catUnstitched,
-    gallery: [catUnstitched, p1, edit1],
+    image: productEmbroideredLawn,
+    gallery: [productEmbroideredLawn, catUnstitched, productEverydayCotton],
     inStock: false,
     description:
       "Traditional chikankari worked by hand on soft mint lawn — three pieces, unstitched, ready for your tailor.",
@@ -296,8 +317,8 @@ export const products: Product[] = [
     fabric: "Khaddar",
     colors: [{ name: "Marigold", hex: "#E3A11B" }],
     sizes,
-    image: catReadyToWear,
-    gallery: [catReadyToWear, p3],
+    image: productMarigoldKurta,
+    gallery: [productMarigoldKurta, productDigitalPrinted, catReadyToWear],
     inStock: true,
     description:
       "Warm marigold khaddar with tonal gold thread work along the placket and cuffs.",
@@ -313,8 +334,8 @@ export const products: Product[] = [
     fabric: "Crepe",
     colors: [{ name: "Blush", hex: "#E8C4C9" }],
     sizes,
-    image: catPret,
-    gallery: [catPret, p2],
+    image: productBlushPret,
+    gallery: [productBlushPret, productPrintedLawn, catPret],
     inStock: true,
     description:
       "A softly draped blush crepe ensemble with lace trims — understated luxury for daytime celebrations.",
@@ -358,24 +379,31 @@ export const theEdit = [
   {
     title: "Everyday Elegance",
     copy: "Soft cottons and quiet detail.",
-    image: edit1,
+    image: editEveryday,
     slug: "ready-to-wear",
   },
   {
     title: "Festive Edit",
     copy: "Velvet, zari and celebration.",
-    image: edit2,
+    image: editFestive,
     slug: "fancy",
   },
   {
     title: "Luxury Pret",
     copy: "Silk cut for the modern woman.",
-    image: edit3,
+    image: editLuxuryPret,
     slug: "pret",
   },
 ];
 
-export const socialGrid = [p1, edit3, catAccessories, p4, edit1, p5];
+export const socialGrid = [
+  productEmbroideredLawn,
+  productEmeraldSilk,
+  productGoldClutch,
+  productChiffonSuit,
+  productEverydayCotton,
+  productLuxuryPret,
+];
 
 export const formatPKR = (value: number) =>
   `PKR ${value.toLocaleString("en-PK")}`;
