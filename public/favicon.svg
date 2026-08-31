@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" role="img" aria-label="NOORÉ">
+  <rect width="32" height="32" rx="6" fill="#F8F5ED" />
+  <g transform="translate(-8, 7)">
+    <path
+      d="M24 17C24 9 30 3 44 2c0 8-7 14-20 15Z M24 17C24 11 19 6 8 5c0 6 6 11 16 12Z"
+      fill="#C9A96E"
+      fill-opacity="0.85"
+    />
+  </g>
+</svg>
